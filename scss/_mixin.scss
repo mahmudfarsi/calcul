@@ -1,0 +1,23 @@
+@mixin justify($tag){
+    justify-content: $tag;
+    -webkit-justify-content:$tag;
+    -o-justify-content:$tag;
+    -moz-justify-content:$tag;
+    -ms-justify-content:$tag;
+}
+
+
+@mixin items($tag){
+    align-items: $tag;
+    -webkit-align-items:$tag;
+    -o-align-items:$tag;
+    -moz-align-items:$tag;
+    -ms-align-items:$tag;
+}
+
+@mixin radius($border){
+    border-radius: $border;
+    -webkit-border-radius:$border;
+    -o-border-radius:$border;
+    -moz-border-radius:$border;
+}
