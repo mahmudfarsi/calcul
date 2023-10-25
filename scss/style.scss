@@ -1,4 +1,7 @@
-@charset ' utf-8';
+@charset ' UTF-8';
+@import 'variables','mixin';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+
 
 
 *{
@@ -10,3 +13,158 @@
 }
 
 
+body{
+    font-family: $mono;
+}
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+    padding: 0px 15px;
+    background: radial-gradient($bg-main);
+    display: flex;
+    @include justify(center);
+    @include items(center);
+    
+
+
+
+
+    .wrapper{
+        width: 40%;
+        height: 640px;
+        max-width: 360px;
+        min-width: 320px;
+        padding: 134px 15px 25px 15px;
+
+
+
+
+        .header{
+            width: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            @include justify(flex-start);
+            padding-bottom: 30px;
+
+
+
+            .current{
+                color: $wh-color;
+                font-size: 26px;
+                font-style: normal;
+                font-weight: $f-300;
+                line-height: normal;
+                opacity: 0.3;
+            }
+
+            .result{
+                color: $wh-color;
+                font-size: 42px;
+                font-style: normal;
+                font-weight: $f-400;
+                line-height: normal;
+            }
+
+        }
+
+
+
+        .box_calcul{
+            width: 100%;
+            height: 360px;
+            padding: 0px 15px 0px 10px;
+            display: flex;
+            @include gap(25px);
+            flex-flow: row nowrap;
+            position: relative;
+            border-top: 1px solid gray;
+
+
+
+            .box_left{
+                display: flex;
+                flex-flow:row wrap;
+     
+
+
+
+
+                button{
+                    display: flex;
+                    width: 70px;
+                    height: 70px;
+                    flex-direction: column;
+                    @include justify(center);
+                    @include items(center);
+                    @include gap(10px);
+                    flex-shrink: 0;
+                    outline: none;
+                    background: none;
+                    border: none;
+                    color: $wh-color;
+                    text-align: center;
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight:$f-400;
+                    line-height: normal;
+                    cursor: pointer;
+
+                }
+
+
+                .delete , .percent , .plus_min{
+                    opacity: 0.6;
+                }
+            }
+
+
+
+            .box_right{
+                flex-basis: 70px;
+                padding: 5px;
+                height: 392px;
+                background: $bg-curve;
+                margin-top: -33px;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: end;
+                border-radius: 100px 100px 0px 0px;
+                
+
+
+
+
+
+                button{
+                    width: 60px;
+                    height: 70px;
+                    background: none;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    color: $wh-color;
+                    text-align: center;
+                    font-family: $mono;
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 100;
+                    line-height: normal;
+                    opacity: 0.6;
+
+
+                    &.equal{
+                        background: $rd-color;
+                        border-radius: 100px;
+                        box-shadow: 0px 0px 17px 0px rgba(202, 62, 71, 0.30), 0px 4px 4px 0px rgba(0, 0, 0, 0.20);
+
+                    }
+                }
+
+                
+            }
+        }
+    }
+    
+}

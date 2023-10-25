@@ -15,6 +15,13 @@
     -ms-align-items:$tag;
 }
 
+@mixin gap($item){
+    gap: $item;
+    -webkit-gap:$item;
+    -moz-gap:$item;
+    -o-gap:$item;
+}
+
 @mixin radius($border){
     border-radius: $border;
     -webkit-border-radius:$border;
