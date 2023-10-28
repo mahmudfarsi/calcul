@@ -16,6 +16,7 @@ btns.forEach(items=>{
         else if(e.target.innerText === 'C'){
             string = '';
             currentNumber.value = 0;
+            resultNumber.innerText = 0;
         }
         else if(e.target.id === 'minus'){
             string = String(-eval(string));
