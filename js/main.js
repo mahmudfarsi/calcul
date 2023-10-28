@@ -1,69 +1,34 @@
 const $ = document;
 const currentNumber = $.querySelector('.current');
 const resultNumber = $.querySelector('.result');
-const deleted = $.querySelector('.delete');
-const plusMin = $.querySelector('.plus_min');
-const percent = $.querySelector('.percent');
-const numbers = $.querySelectorAll('.number');
-const division = $.querySelector('.division');
-const multi = $.querySelector('.multi');
-const mines = $.querySelector('.mines');
-const plus = $.querySelector('.plus');
-const equal = $.querySelector('.equal');
+const btns = $.querySelectorAll('button');
+let string ='';
 
 
-numbers.forEach(num=>{
-    num.addEventListener('click',(e)=>{   
-        let content = e.target.innerText;
-        if(currentNumber.innerText === '0'){
-            currentNumber.innerText = '';  
+
+
+btns.forEach(items=>{
+    items.addEventListener('click',(e)=>{   
+        if(e.target.innerText === '='){
+            string= String(eval(string));
+            resultNumber.innerText = string;
         }
-        currentNumber.innerText += content;
+        else if(e.target.innerText === 'C'){
+            string = '';
+            currentNumber.value = 0;
+        }
+        else if(e.target.id === 'minus'){
+            string = String(-eval(string));
+            currentNumber.value = string;
+        }
+        else{
+            if(currentNumber.value === '0'){
+                currentNumber.value = '';
+            }
+            string += e.target.innerText;
+            currentNumber.value = string;
+            resultNumber = string;
+            
+        }
     });
-});
-
-division.addEventListener('click',(e)=>{
-    let content = e.target.innerText;
-    if(currentNumber.innerText === '0'){
-        currentNumber.innerText = '';  
-    };
-    currentNumber.innerText+=content;
-});
-
-multi.addEventListener('click',(e)=>{
-    let content = e.target.innerText;
-    if(currentNumber.innerText === '0'){
-        currentNumber.innerText = '';  
-    };
-    currentNumber.innerText+=content;
-});
-
-
-plus.addEventListener('click',(e)=>{
-    let content = e.target.innerText;
-    if(currentNumber.innerText === '0'){
-        currentNumber.innerText = '';  
-    };
-    currentNumber.innerText+=content;
-});
-
-mines.addEventListener('click',(e)=>{
-    let content = e.target.innerText;
-    if(currentNumber.innerText === '0'){
-        currentNumber.innerText = '';  
-    };
-    currentNumber.innerText+=content;
-});
-
-equal.addEventListener('click',(e)=>{
-    let content = e.target.innerText;
-    if(currentNumber.innerText === '0'){
-        currentNumber.innerText = '';  
-    };
-    currentNumber.innerText+=content;
-});
-
-
-deleted.addEventListener('click',()=>{
-    currentNumber.innerText = 0 ;
 });

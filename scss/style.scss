@@ -57,6 +57,10 @@ body{
                 font-weight: $f-300;
                 line-height: normal;
                 opacity: 0.3;
+                background: none;
+                border: none;
+                outline: none;
+                font-family: $mono;
             }
 
             .result{
